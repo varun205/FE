@@ -5,3 +5,7 @@ from sklearn.ensemble import BaggingClassifier
 from sklearn.metrics import classification_report
 
 df = pd.read_csv("https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv",delimiter=";")
+
+x = df.drop(columns=['quality'])
+y = df['quality']
+x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2,random_state=42)
